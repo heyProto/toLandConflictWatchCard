@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter|Cabin');
+.lcw-card {
+    width: 540px;
+    display: inline-block;
+    position: relative;
+    /*background: #fafafa;*/
+    box-sizing: border-box;
+    padding: 16px;
+    font-family: "cabin";
+    height: 580px;
+    border-radius: 4px;
+    border: 1px solid #efefef;
+}
+
+.lcw-card .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    font-family: "bitter";
+}
+
+.lcw-card .card-tabs {
+    width: 540px;
+    margin-left: -16px;
+    margin-top: 32px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 16px;
+}
+
+.lcw-card .card-tabs .single-tab {
+    font-size: 12px;
+    color: #9a9a9a;
+    text-transform: uppercase;
+    width: 110px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.lcw-card .single-tab.active {
+    border-bottom: 2px solid #FAA10C;
+    color: #FAA10C;
+}
+
+.lcw-card p {
+    font-size: 14px;
+    color: #525252;
+    margin: 0px;
+    padding: 0px;
+    line-height: 21px;
+    margin-bottom: 8px;
+}
+
+.lcw-card div .parameter-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #9a9a9a;
+    margin-bottom: 4px;
+}
+
+.lcw-card .parameter-small-label {
+    font-size: 10px;
+    text-transform: capitalize;
+    color: #7a7a7a;
+    margin-bottom: 4px;
+}
+
+.lcw-card .card-footer {
+    height: 45px;
+    border-top: 1px solid #efefef;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 4px 8px;
+    width: 540px;
+    box-sizing: border-box;
+}
+
+.lcw-card .call-to-action-button {
+    font-size: 12px;
+    color: white;
+    background: #FAA10C;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    float: right;
+    margin-top: 2px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.lcw-card .half-width-parameter {
+    width: 253px;
+    display: inline-block;
+    float: left;
+}
+
+.lcw-card .half-width-parameter p {
+    width: 240px;
+}
+
+.lcw-card .single-parameter {
+    margin-bottom: 8px;
+    width: 100%;
+    display: inline-block;
+}
+
+.lcw-card a {
+    color: #0F62C4 !important;
+}
+
+a:active {
+    color: yelow;
+}
