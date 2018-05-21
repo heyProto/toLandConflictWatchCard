@@ -228,7 +228,7 @@ export default class toCard extends React.Component {
       return(<div>Loading</div>)
     }
     else {
-      
+      console.log(data.explore_url) 
       return (
         <div
           id="protograph_div"
@@ -245,7 +245,7 @@ export default class toCard extends React.Component {
                 </div>
                 <div className="card-footer">
                     <img src={'./src/images/lcw-logo.png'}/>
-                    <div className="call-to-action-button">Click here to explore data</div>
+                    <a href={data.explore_url}><div className="call-to-action-button">Click here to explore data</div></a>
                 </div>
             </div>         
         </div>

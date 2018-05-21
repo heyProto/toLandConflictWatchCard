@@ -140,12 +140,17 @@
                         }
                     },
                     "required": ["links", "sources"]
+                },
+                "explore_url": {
+                    "id": "/properties/data/properties/explore_url",
+                    "type": "string",
+                    "title": "Explore URL"
                 }
             },
 
             "title": "Card Data",
             "type": "object",
-            "required": ["title", "overview", "details", "narrative", "sources"]
+            "required": ["title", "overview", "details", "narrative", "sources", "explore_url"]
         }
     },
     "type": "object"

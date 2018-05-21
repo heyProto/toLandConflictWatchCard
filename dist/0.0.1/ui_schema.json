@@ -71,6 +71,9 @@
             "sources": {
                 "ui:widget": "textarea"
             }
+        },
+        "explore_url": {
+            "ui:widget": "text"
         }
     },
     "mandatory_config": {

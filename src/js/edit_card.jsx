@@ -110,7 +110,16 @@ export default class editToCard extends React.Component {
             dataJSON: dataJSON
           }
         })
-        break;  
+        break;
+       case 6:
+        this.setState((prevState,prop)=>{
+          let dataJSON = prevState.dataJSON;
+          dataJSON.data.explore_url = formData;
+          return{
+            dataJSON : dataJSON
+          }
+        })
+        break;   
     }
   }
 
@@ -120,9 +129,10 @@ export default class editToCard extends React.Component {
       case 2:
       case 3:
       case 4:
+      case 5:
         this.setState((prevStep,prop)=>{ step: ++prevStep.step });
         break;
-      case 5:
+      case 6:
         if (typeof this.props.onPublishCallback === "function") {
           let dataJSON = this.state.dataJSON;
           dataJSON.data.section = dataJSON.data.title;
@@ -164,7 +174,9 @@ export default class editToCard extends React.Component {
         break;
       case 5:
         return this.state.schemaJSON.properties.data.properties.sources;
-        break; 
+        break;
+      case 6:
+        return this.state.schemaJSON.properties.data.properties.explore_url;   
     }
   }
 
@@ -190,7 +202,10 @@ export default class editToCard extends React.Component {
         break;    
       case 5: 
         return this.state.dataJSON.data.Sources;
-        break;  
+        break;
+      case 6:
+        return this.state.dataJSON.data.explore_url;
+        break;    
     }
   }
 
@@ -203,6 +218,7 @@ export default class editToCard extends React.Component {
       case 3:
       case 4:
       case 5:
+      case 6:
         return '< Back';
         break;
     }
@@ -214,9 +230,10 @@ export default class editToCard extends React.Component {
       case 2:
       case 3:
       case 4:
+      case 5:
         return 'Next';
         break;
-      case 5:
+      case 6:
         return 'Publish';
         break;
     }
@@ -238,7 +255,10 @@ export default class editToCard extends React.Component {
         break;
       case 5:
         return this.state.uiSchemaJSON.data.sources;
-        break;  
+        break;
+      case 6:
+        return this.state.uiSchemaJSON.data.explore_url;
+        break;    
       default:
         return {};
         break;
