@@ -152,6 +152,25 @@ export default class editToCard extends React.Component {
 
     let blockquote_string = `<h1>${d.title}</h1>`;
     // Create blockqoute string.
+    blockqoute_string += `<p>${d.Overview.reasons}</p>`;
+    blockqoute_string += `<p>${d.Overview.village}</p>`;
+    blockqoute_string += `<p>${d.Overview.district}</p>`;
+    blockqoute_string += `<p>${d.Overview.sector}</p>`;
+    blockqoute_string += `<p>${d.Overview.province}</p>`;
+    blockqoute_string += `<p>${d.Overview.noHouseholds}</p>`;
+    blockqoute_string += `<p>${d.Overview.investment}</p>`;
+    blockqoute_string += `<p>${d.Overview.landArea}</p>`;
+    blockqoute_string += `<p>${d.Overview.startYear}</p>`;
+    blockqoute_string += `<p>${d.Details.parties.state}</p>`;
+    blockqoute_string += `<p>${d.Details.parties.corporate}</p>`;
+    blockqoute_string += `<p>${d.Details.parties.local}</p>`;
+    blockqoute_string += `<p>${d.Details.parties.others}</p>`;
+    blockqoute_string += `<p>${d.Details.landtype}</p>`;
+    blockqoute_string += `<p>${d.Details.commanLandtype}</p>`;
+    blockqoute_string += `<p>${d.Details.HRViolation}</p>`;
+    blockqoute_string += `<p>${d.Narrative}</p>`;
+    blockqoute_string += `<a>${d.Sources.links}</a>`;
+    blockqoute_string += `<a>${d.Sources.sources}</a>`;
     let seo_blockquote = '<blockquote>' + blockquote_string + '</blockquote>'
     return seo_blockquote;
   }

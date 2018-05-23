@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import '../css/lcw.css';
 
 export default class toCard extends React.Component {
 
@@ -97,7 +96,7 @@ export default class toCard extends React.Component {
       
       tabNames = tabs.map((card,i)=>{
       let tabClass;
-      tabClass = (this.state.activeCounter == i+1) ? "single-tab active" : "single-tab";
+      tabClass = (this.state.activeCounter == i+1)  ? ((this.state.mode == "col-7")?"single-tab active":"single-tab single-tab-mobile active") : ((this.state.mode == "col-7")?"single-tab":"single-tab single-tab-mobile");
       return(
           <div key={i.toString()} className={tabClass} style={{cursor:"pointer"}} onClick={()=>this.selectTab(i)}>{tabs[i]}</div>
       )
@@ -112,7 +111,7 @@ export default class toCard extends React.Component {
         let overview = this.state.dataJSON.data.Overview;
         let summary = this.state.dataJSON.data.Narrative.substr(0,this.state.dataJSON.data.Narrative.indexOf('.')+1)+'....';
         return(
-            <div >
+            <div>
                 <div className="half-width-parameter">
                     <div className="single-parameter">
                         <div className="parameter-label">REASONS/NATURE OF LAND CONFLICT</div>
@@ -240,7 +239,7 @@ export default class toCard extends React.Component {
                 <div className="card-tabs">
                 {this.renderTabs()}  
                 </div>
-                <div>
+                <div >
                     {this.renderTabContent(this.state.activeCounter)}
                 </div>
                 <div className="card-footer">
@@ -257,12 +256,32 @@ export default class toCard extends React.Component {
     if (this.state.fetchingData) {
       return (<div>Loading</div>)
     } else {
+      let data = this.state.dataJSON.data;
       return (
         <div
           id="protograph_div"
           className="protograph-col4-mode"
           style={{ fontFamily: this.state.languageTexts.font }}>
           {/* content */}
+          <div
+          id="protograph_div"
+          className="protograph-col7-mode"
+          style={{ fontFamily: this.state.languageTexts.font }}>
+          {/* content */}
+          <div className="lcw-card lcw-card-mobile">
+            <div className="card-title">{data.title}</div>
+              <div className="card-tabs card-tabs-mobile">
+              {this.renderTabs()}  
+              </div>
+              <div className="tab-content">
+                  {this.renderTabContent(this.state.activeCounter)}
+              </div>
+              <div className="card-footer card-footer-mobile">
+                  <img src={'./src/images/lcw-logo.png'}/>
+                  <a href={data.explore_url}><div className="call-to-action-button call-to-action-button-mobile">Click here to explore data</div></a>
+              </div>
+            </div>         
+          </div>
         </div>
       )
     }
