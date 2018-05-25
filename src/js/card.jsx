@@ -269,13 +269,15 @@ export default class toCard extends React.Component {
           style={{ fontFamily: this.state.languageTexts.font }}>
           {/* content */}
           <div className="lcw-card lcw-card-mobile">
-            <div className="card-title">{data.title}</div>
+            <div className="tabContent">
+            <div className="card-title card-title-mobile">{data.title}</div>
               <div className="card-tabs card-tabs-mobile">
               {this.renderTabs()}  
               </div>
               <div className="tab-content">
                   {this.renderTabContent(this.state.activeCounter)}
               </div>
+            </div>  
               <div className="card-footer card-footer-mobile">
                   <img src={'./src/images/lcw-logo.png'}/>
                   <a href={data.explore_url}><div className="call-to-action-button call-to-action-button-mobile">Click here to explore data</div></a>
