@@ -1,0 +1,157 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {},
+    "id": "http://example.com/example.json",
+    "properties": {
+        "data": {
+            "id": "/properties/data",
+            "properties": {
+                "title": {
+                    "id": "/properties/data/properties/id",
+                    "type": "string",
+                    "title": "Title"
+                },
+                "overview": {
+                    "id": "/properties/data/properties/overview",
+                    "type": "object",
+                    "title": "Overview",
+                    "properties": {
+                        "reasons": {
+                            "id": "/properties/data/properties/overview/properties/reasons",
+                            "type": "string",
+                            "title": "Reasons/Nature of Land Conflict"
+                        },
+                        "village": {
+                            "id": "/properties/data/properties/overview/properties/village",
+                            "type": "string",
+                            "title": "Village/Town"
+                        },
+                        "district": {
+                            "id": "/properties/data/properties/overview/properties/district",
+                            "type": "string",
+                            "title": "District"
+                        },
+                        "sector": {
+                            "id": "/properties/data/properties/overview/properties/sector",
+                            "type": "string",
+                            "title": "Sector/Type of Industry"
+                        },
+                        "province": {
+                            "id": "/properties/data/properties/overview/properties/province",
+                            "type": "string",
+                            "title": "Province"
+                        },
+                        "noHouseholds": {
+                            "id": "/properties/data/properties/overview/properties/noHouseholds",
+                            "type": "integer",
+                            "title": "No. of Household affected"
+                        },
+                        "investment": {
+                            "id": "/properties/data/properties/overview/properties/investment",
+                            "type": "number",
+                            "title": "Investment(in crores , Â‚_)"
+                        },
+                        "landArea": {
+                            "id": "/properties/data/properties/overview/properties/landArea",
+                            "type": "number",
+                            "title": "Land Area Affected"
+                        },
+                        "startYear": {
+                            "id": "/properties/data/properties/overview/properties/startYear",
+                            "type": "string",
+                            "title": "Starting Area"
+                        }
+
+                    },
+                    "required": ["reasons", "village", "district", "province", "noHouseholds", "investment", "landArea", "startYear"]
+                },
+                "details": {
+                    "id": "/properties/data/properties/details",
+                    "type": "object",
+                    "title": "Details",
+                    "properties": {
+                        "parties": {
+                            "id": "/properties/data/properties/details/properties/parties",
+                            "type": "object",
+                            "title": "Parties Involved",
+                            "properties": {
+                                "state": {
+                                    "id": "/properties/data/properties/details/properties/parties/properties/state",
+                                    "type": "string",
+                                    "title": "State"
+                                },
+                                "corporate": {
+                                    "id": "/properties/data/properties/details/properties/parties/properties/corporate",
+                                    "type": "string",
+                                    "title": "Corporate"
+                                },
+                                "local": {
+                                    "id": "/properties/data/properties/details/properties/parties/properties/local",
+                                    "type": "string",
+                                    "title": "Community/Local Organisation"
+                                },
+                                "others": {
+                                    "id": "/properties/data/properties/details/properties/parties/properties/others",
+                                    "type": "string",
+                                    "title": "Others"
+                                }
+                            },
+                            "required": ["state", "corporate", "local", "others"]
+                        },
+                        "landtype": {
+                            "id": "/properties/data/properties/details/properties/landtype",
+                            "type": "string",
+                            "title": "Type of Land"
+                        },
+                        "commanLandType": {
+                            "id": "/properties/data/properties/details/properties/commanLandType",
+                            "type": "string",
+                            "title": "Type of Comman Land"
+                        },
+                        "HRViolation": {
+                            "id": "/properties/data/properties/details/properties/HRViolation",
+                            "type": "string",
+                            "title": "Major Human Rights Violations related to the conflict"
+                        }
+                    },
+                    "required": ["parties", "landtype", "commanLandType", "HRViolation"]
+
+                },
+                "narrative": {
+                    "id": "/properties/data/properties/narrative",
+                    "type": "string",
+                    "title": "Narravtive"
+
+                },
+                "sources": {
+                    "id": "/properties/data/properties/sources",
+                    "type": "object",
+                    "title": "Sources",
+                    "properties": {
+                        "links": {
+                            "id": "/properties/data/properties/sources/porperties/links",
+                            "type": "string",
+                            "title": "Links"
+                        },
+                        "sources": {
+                            "id": "/properties/data/properties/sources/porperties/sources",
+                            "type": "string",
+                            "title": "Sources"
+                        }
+                    },
+                    "required": ["links", "sources"]
+                },
+                "explore_url": {
+                    "id": "/properties/data/properties/explore_url",
+                    "type": "string",
+                    "title": "Explore URL"
+                }
+            },
+
+            "title": "Card Data",
+            "type": "object",
+            "required": ["title", "overview", "details", "narrative", "sources", "explore_url"]
+        }
+    },
+    "type": "object"
+}

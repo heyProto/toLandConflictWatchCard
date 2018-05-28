@@ -1,0 +1,35 @@
+{
+    "data": {
+        "title": "Assigned lands encroached by upper caste landlords in Bhattuvanipalle village of Prakasham District",
+        "Overview": {
+            "reasons": "Encroachment by non-right holders, Land Acquisition by Government",
+            "village": "Bhattuvanipalle",
+            "district": "Prakasham",
+            "sector": "Other Kind of Land Use",
+            "province": "Andhra Pradesh",
+            "noHouseholds": "27",
+            "investment": "5.67",
+            "landArea": "35",
+            "startYear": "1994"
+        },
+        "Details": {
+            "parties": {
+                "state": "M.P. Government",
+                "corporate": "ACB India LTD.",
+                "local": "TOKO_ROKO_THOKO KRANTIKARI MORCHA",
+                "others": "CPI(M), All India Agricultural Workers Union , Kula Vivaksha Porata Sangham"
+
+            },
+            "landtype": "Comman",
+            "commanLandType": "Non-Forest (Grazing Land), Non-Forest (Other than Grazing Land)",
+            "HRViolation": "Tribals allege forest department harass them by filing false charges and putting them in jail."
+        },
+        "Narrative": "in 1994, 35 acres of land was given to 27 Dalit families under land reforms in Amanigudipadu village in Prakasam district. However, people of Reddy community force evicted Dalits from their land and encroached it. Dalits were farming on that land. Since then, Dalits have been fighting to regain their land. They are supported by All India Agricultural Workers Union and have given representations to local authorities including district collector. Under AP Assigned Lands (Prohibition of Transfers) Act 1977, the assigned lands cannot be sold or purchased.",
+        "Sources": {
+            "links": "Vamsadhara project-displaced: Naidu for quick settlement of cases, Vamsadhara displaced families launch relay fast, Displaced families demand â€˜reasonableâ€™ package",
+            "sources": "Prakasham Assigned lands.jpg"
+        },
+        "explore_url": ""
+    },
+    "mandatory_config": {}
+}

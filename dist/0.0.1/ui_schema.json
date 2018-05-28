@@ -1,0 +1,82 @@
+{
+    "data": {
+        "title": {
+            "ui:widget": "textarea"
+        },
+        "overview": {
+            "reasons": {
+                "ui:widget": "textarea"
+            },
+            "village": {
+                "ui:widget": "text"
+            },
+            "district": {
+                "ui:widget": "text"
+            },
+            "sector": {
+                "ui:widget": "text"
+            },
+            "province": {
+                "ui:widget": "text"
+            },
+            "noHouseholds": {
+                "ui:widget": "range"
+            },
+            "investment": {
+                "ui:widget": "updown"
+            },
+            "landArea": {
+                "ui:widget": "updown"
+            },
+            "startYear": {
+                "ui:widget": "text"
+            }
+        },
+        "details": {
+            "parties": {
+                "state": {
+                    "ui:widget": "text"
+                },
+                "corporate": {
+                    "ui:widget": "text"
+                },
+                "local": {
+                    "ui:widget": "text"
+                },
+                "others": {
+                    "ui:widget": "textarea"
+                }
+
+            },
+            "landtype": {
+                "ui:widget": "text"
+            },
+            "commanLandType": {
+                "ui:widget": "text"
+            },
+            "HRViolation": {
+                "ui:widget": "textarea"
+            }
+        },
+        "narrative": {
+            "ui:widget": "textarea",
+            "ui:options": {
+                "rows": "15"
+            }
+        },
+        "sources": {
+            "links": {
+                "ui:widget": "textarea"
+            },
+            "sources": {
+                "ui:widget": "textarea"
+            }
+        },
+        "explore_url": {
+            "ui:widget": "text"
+        }
+    },
+    "mandatory_config": {
+        "ui:widget": "hidden"
+    }
+}
