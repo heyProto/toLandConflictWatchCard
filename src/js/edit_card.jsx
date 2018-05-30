@@ -29,7 +29,7 @@ export default class editToCard extends React.Component {
       optionalConfigJSON: this.state.optionalConfigJSON,
       optionalConfigSchemaJSON: this.state.optionalConfigSchemaJSON
     }
-    getDataObj["name"] = getDataObj.dataJSON.data.title.substr(0,225); // Reduces the name to ensure the slug does not get too long
+    getDataObj["name"] = getDataObj.dataJSON.data.name_of_conflict.substr(0,225); // Reduces the name to ensure the slug does not get too long
     return getDataObj;
   }
 
@@ -43,7 +43,7 @@ export default class editToCard extends React.Component {
         axios.get(this.props.optionalConfigSchemaURL),
         axios.get(this.props.uiSchemaURL)
       ])
-      .then(axios.spread((card, schema, opt_config, opt_config_schema, uiSchema, linkSources) => {
+      .then(axios.spread((card, schema, opt_config, opt_config_schema, uiSchema) => {
         let stateVars = {
           fetchingData: false,
           dataJSON: card.data,
@@ -52,97 +52,30 @@ export default class editToCard extends React.Component {
           optionalConfigSchemaJSON: opt_config_schema.data,
           uiSchemaJSON: uiSchema.data
         };
-
         this.setState(stateVars);
       }));
     }
   }
 
   onChangeHandler({formData}) {
-    switch (this.state.step) {
-      case 1:
-        this.setState((prevState, prop) => {
-          // Manipulate dataJSON
-          let dataJSON = prevState.dataJSON;
-          dataJSON.data.title = formData; 
-          
-          return {
-            dataJSON: dataJSON
-          }
-        })
-        break;
-      case 2:
-        this.setState((prevState, prop) => {
-          // Manipulate dataJSON
-          let dataJSON = prevState.dataJSON;
-          dataJSON.data.Overview = formData;
-          return {
-            dataJSON: dataJSON
-          }
-        })
-        break;
-      case 3:
-        this.setState((prevState, prop) => {
-          // Manipulate dataJSON
-          let dataJSON = prevState.dataJSON;
-          dataJSON.data.Details = formData;
-          return {
-            dataJSON: dataJSON
-          }
-        })
-        break;  
-      case 4:
-        this.setState((prevState, prop) => {
-          // Manipulate dataJSON
-          let dataJSON = prevState.dataJSON;
-          dataJSON.data.Narrative = formData;
-          return {
-            dataJSON: dataJSON
-          }
-        })
-        break;
-      case 5:
-        this.setState((prevState, prop) => {
-          // Manipulate dataJSON
-          let dataJSON = prevState.dataJSON;
-          dataJSON.data.Sources = formData;
-          return {
-            dataJSON: dataJSON
-          }
-        })
-        break;
-       case 6:
-        this.setState((prevState,prop)=>{
-          let dataJSON = prevState.dataJSON;
-          dataJSON.data.explore_url = formData;
-          return{
-            dataJSON : dataJSON
-          }
-        })
-        break;   
-    }
+    this.setState((prevState,prop)=>{
+      let dataJSON = prevState.dataJSON;
+      dataJSON.data = formData;
+      return{
+        dataJSON : dataJSON
+      }
+    })  
   }
 
   onSubmitHandler({formData}) {
-    switch(this.state.step) {
-      case 1:
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-        this.setState((prevStep,prop)=>{ step: ++prevStep.step });
-        break;
-      case 6:
-        if (typeof this.props.onPublishCallback === "function") {
-          let dataJSON = this.state.dataJSON;
-          dataJSON.data.section = dataJSON.data.title;
-          this.setState({ publishing: true, dataJSON: dataJSON });
-          let publishCallback = this.props.onPublishCallback();
-          publishCallback.then((message) => {
-            this.setState({ publishing: false });
-          });
-        }
-        break;
+    if (typeof this.props.onPublishCallback === "function") {
+      let dataJSON = this.state.dataJSON;
+      dataJSON.data.section = dataJSON.data.title;
+      this.setState({ publishing: true, dataJSON: dataJSON });
+      let publishCallback = this.props.onPublishCallback();
+      publishCallback.then((message) => {
+        this.setState({ publishing: false });
+      });
     }
   }
 
@@ -150,83 +83,48 @@ export default class editToCard extends React.Component {
   renderSEO() {
     let d = this.state.dataJSON.data;
 
-    let blockquote_string = `<h1>${d.title}</h1>`;
-    // Create blockqoute string.
-    blockqoute_string += `<p>${d.Overview.reasons}</p>`;
-    blockqoute_string += `<p>${d.Overview.village}</p>`;
-    blockqoute_string += `<p>${d.Overview.district}</p>`;
-    blockqoute_string += `<p>${d.Overview.sector}</p>`;
-    blockqoute_string += `<p>${d.Overview.province}</p>`;
-    blockqoute_string += `<p>${d.Overview.noHouseholds}</p>`;
-    blockqoute_string += `<p>${d.Overview.investment}</p>`;
-    blockqoute_string += `<p>${d.Overview.landArea}</p>`;
-    blockqoute_string += `<p>${d.Overview.startYear}</p>`;
-    blockqoute_string += `<p>${d.Details.parties.state}</p>`;
-    blockqoute_string += `<p>${d.Details.parties.corporate}</p>`;
-    blockqoute_string += `<p>${d.Details.parties.local}</p>`;
-    blockqoute_string += `<p>${d.Details.parties.others}</p>`;
-    blockqoute_string += `<p>${d.Details.landtype}</p>`;
-    blockqoute_string += `<p>${d.Details.commanLandtype}</p>`;
-    blockqoute_string += `<p>${d.Details.HRViolation}</p>`;
-    blockqoute_string += `<p>${d.Narrative}</p>`;
-    blockqoute_string += `<a>${d.Sources.links}</a>`;
-    blockqoute_string += `<a>${d.Sources.sources}</a>`;
+    let blockquote_string = `<h1>${d.name_of_conflict}</h1><p>${d.nature_of_land_conflict}</p><p>${d.district}</p><p>${d.state}</p><p>${d.type_of_industry}</p><p>${d.summary}</p>`;
     let seo_blockquote = '<blockquote>' + blockquote_string + '</blockquote>'
     return seo_blockquote;
   }
 
   renderSchemaJSON() {
-    let schema;
-    switch(this.state.step){
-      case 1:
-        return this.state.schemaJSON.properties.data.properties.title;
-        break;
-      // Add more schemas...
-      case 2:
-        return this.state.schemaJSON.properties.data.properties.overview;
-        break;
-      case 3:
-        return this.state.schemaJSON.properties.data.properties.details;
-        break;  
-      case 4:
-        return this.state.schemaJSON.properties.data.properties.narrative;
-        break;
-      case 5:
-        return this.state.schemaJSON.properties.data.properties.sources;
-        break;
-      case 6:
-        return this.state.schemaJSON.properties.data.properties.explore_url;   
-    }
+    return this.state.schemaJSON.properties.data;   
   }
 
   renderFormData() {
-
-    switch(this.state.step) {
-      case 1:
-        return this.state.dataJSON.data.title;
-        break;
-      // Other form data.
-      case 2:
-        let overview = this.state.dataJSON.data.Overview;
-        overview.noHouseholds = parseInt(overview.noHouseholds);
-        overview.investment = parseFloat(overview.investment);
-        overview.landArea = parseFloat(overview.landArea); 
-        return overview;
-        break;
-      case 3:
-        return this.state.dataJSON.data.Details;
-        break;
-      case 4:
-        return this.state.dataJSON.data.Narrative;
-        break;    
-      case 5: 
-        return this.state.dataJSON.data.Sources;
-        break;
-      case 6:
-        return this.state.dataJSON.data.explore_url;
-        break;    
-    }
+    let data = this.state.dataJSON.data;
+    return data;    
   }
+
+  // renderFormData() {
+
+  //   switch(this.state.step) {
+  //     case 1:
+  //       return this.state.dataJSON.data.title;
+  //       break;
+  //     // Other form data.
+  //     case 2:
+  //       let overview = this.state.dataJSON.data.Overview;
+  //       overview.noHouseholds = parseInt(overview.noHouseholds);
+  //       overview.investment = parseFloat(overview.investment);
+  //       overview.landArea = parseFloat(overview.landArea); 
+  //       return overview;
+  //       break;
+  //     case 3:
+  //       return this.state.dataJSON.data.Details;
+  //       break;
+  //     case 4:
+  //       return this.state.dataJSON.data.Narrative;
+  //       break;    
+  //     case 5: 
+  //       return this.state.dataJSON.data.Sources;
+  //       break;
+  //     case 6:
+  //       return this.state.dataJSON.data.explore_url;
+  //       break;    
+  //   }
+  // }
 
   showLinkText() {
     switch(this.state.step) {
@@ -246,43 +144,15 @@ export default class editToCard extends React.Component {
   showButtonText() {
     switch(this.state.step) {
       case 1:
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-        return 'Next';
-        break;
-      case 6:
         return 'Publish';
         break;
     }
   }
 
   getUISchemaJSON() {
-    switch (this.state.step) {
-      case 1:
-        return this.state.uiSchemaJSON.data.title;
-        break;
-      case 2:
-        return this.state.uiSchemaJSON.data.overview;
-        break;
-      case 3:
-        return this.state.uiSchemaJSON.data.details;
-        break;
-      case 4:
-        return this.state.uiSchemaJSON.data.narrative;
-        break;
-      case 5:
-        return this.state.uiSchemaJSON.data.sources;
-        break;
-      case 6:
-        return this.state.uiSchemaJSON.data.explore_url;
-        break;    
-      default:
-        return {};
-        break;
-    }
+    return this.state.uiSchemaJSON.data;
   }
+
 
   onPrevHandler() {
     let prev_step = --this.state.step;
@@ -321,7 +191,7 @@ export default class editToCard extends React.Component {
                 <div>
                   <div className="section-title-text">Fill the form</div>
                   <div className="ui label proto-pull-right">
-                    To Land Conflict Watch
+                    toRecordLCW
                   </div>
                 </div>
                 <JSONSchemaForm schema={this.renderSchemaJSON()}
@@ -348,12 +218,6 @@ export default class editToCard extends React.Component {
                       onClick={this.toggleMode}
                     >
                       col-4
-                    </a>
-                    <a className={`item ${this.state.mode === 'col3' ? 'active' : ''}`}
-                      data-mode='col3'
-                      onClick={this.toggleMode}
-                    >
-                      col-3
                     </a>
                   </div>
                 </div>

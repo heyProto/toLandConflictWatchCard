@@ -1,35 +1,24 @@
 {
-    "data": {
-        "title": "Assigned lands encroached by upper caste landlords in Bhattuvanipalle village of Prakasham District",
-        "Overview": {
-            "reasons": "Encroachment by non-right holders, Land Acquisition by Government",
-            "village": "Bhattuvanipalle",
-            "district": "Prakasham",
-            "sector": "Other Kind of Land Use",
-            "province": "Andhra Pradesh",
-            "noHouseholds": "27",
-            "investment": "5.67",
-            "landArea": "35",
-            "startYear": "1994"
-        },
-        "Details": {
-            "parties": {
-                "state": "M.P. Government",
-                "corporate": "ACB India LTD.",
-                "local": "TOKO_ROKO_THOKO KRANTIKARI MORCHA",
-                "others": "CPI(M), All India Agricultural Workers Union , Kula Vivaksha Porata Sangham"
-
-            },
-            "landtype": "Comman",
-            "commanLandType": "Non-Forest (Grazing Land), Non-Forest (Other than Grazing Land)",
-            "HRViolation": "Tribals allege forest department harass them by filing false charges and putting them in jail."
-        },
-        "Narrative": "in 1994, 35 acres of land was given to 27 Dalit families under land reforms in Amanigudipadu village in Prakasam district. However, people of Reddy community force evicted Dalits from their land and encroached it. Dalits were farming on that land. Since then, Dalits have been fighting to regain their land. They are supported by All India Agricultural Workers Union and have given representations to local authorities including district collector. Under AP Assigned Lands (Prohibition of Transfers) Act 1977, the assigned lands cannot be sold or purchased.",
-        "Sources": {
-            "links": "Vamsadhara project-displaced: Naidu for quick settlement of cases, Vamsadhara displaced families launch relay fast, Displaced families demand â€˜reasonableâ€™ package",
-            "sources": "Prakasham Assigned lands.jpg"
-        },
-        "explore_url": ""
-    },
-    "mandatory_config": {}
+  "data": {
+    "name_of_conflict": "Assigned lands encroached by upper caste landlords in Bhattuvanipalle village of Prakasham District",
+    "nature_of_land_conflict": "Encroachment by non-right holders, Land Acquisition by Government",
+    "village": "Bhattuvanipalle",
+    "district": "Prakasham",
+    "state": "Andhra Pradesh",
+    "type_of_industry": "Other Kind of Land Use",
+    "no_of_household_affected": 27,
+    "investment": 5.67,
+    "land_area_affected": 35,
+    "year": "1994",
+    "parties_involved_state": "M.P. Government",
+    "parties_involved_corporate": "ACB India LTD.",
+    "parties_involved_local": "TOKO_ROKO_THOKO KRANTIKARI MORCHA",
+    "parties_involved_others": "CPI(M), All India Agricultural Workers Union , Kula Vivaksha Porata Sangham",
+    "type_of_land": "Common",
+    "type_of_common_land": "Non-Forest (Grazing Land), Non-Forest (Other than Grazing Land)",
+    "major_human_rights_violation_related_to_conflict": "Tribals allege forest department harass them by filing false charges and putting them in jail.",
+    "summary": "In 1994, 35 acres of land was given to 27 Dalit families under land reforms in Amanigudipadu village in Prakasam district. However, people of Reddy community force evicted Dalits from their land and encroached it. Dalits were farming on that land. Since then, Dalits have been fighting to regain their land. They are supported by All India Agricultural Workers Union and have given representations to local authorities including district collector. Under AP Assigned Lands (Prohibition of Transfers) Act 1977, the assigned lands cannot be sold or purchased.",
+    "source_of_information": "Vamsadhara project-displaced: Naidu for quick settlement of cases, Vamsadhara displaced families launch relay fast, Displaced families demand reasonable package",
+    "links": "Prakasham Assigned lands.jpg"
+  }
 }
