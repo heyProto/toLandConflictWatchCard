@@ -21,10 +21,14 @@ a {
 
 .protograph-col4-mode {
   width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .protograph-col7-mode {
   width: 540px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .lcw-card {
