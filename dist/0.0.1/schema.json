@@ -31,6 +31,11 @@
           "id": "/properties/data/properties/state",
           "type": "string",
           "title": "State"
+        },"industry": {
+          "id": "/properties/data/properties/industry",
+          "type": "string",
+          "title": "Industry/Sector",
+          "enum": ["Industry", "Infrastructure", "Land Use", "Mining", "Conservation/Forestry", "Power"]
         },
         "type_of_industry": {
           "id": "/properties/data/properties/type_of_industry",
