@@ -179,7 +179,7 @@ export default class toCard extends React.Component {
             <div className="single-parameter">
               <div className="parameter-label">Links</div>
               <p>
-                <a href={data.links} target="_blank">{data.links}</a>
+                {data.links}
               </p>
             </div>
           </div>
