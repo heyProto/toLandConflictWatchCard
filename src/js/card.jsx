@@ -201,7 +201,7 @@ export default class toCard extends React.Component {
           <div className="lcw-card">
             <div className="card-title">{data.name_of_conflict}</div>
             <div className="card-tabs">{this.renderTabs()}  </div>
-            <div >
+            <div className="card-content">
               {this.renderTabContent(this.state.activeCounter)}
             </div>
             <div className="card-footer">
