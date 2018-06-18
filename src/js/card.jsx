@@ -80,7 +80,9 @@ export default class toCard extends React.Component {
     let data = this.state.dataJSON.data;
     switch(tab){
       case 1:
-        let summary = this.state.dataJSON.data.summary.substr(0,this.state.dataJSON.data.summary.indexOf('.')+1)+'....';
+        let summary = this.state.dataJSON.data.summary;
+        summary = summary.substr(0,summary.indexOf(" ",183))+'....';
+        console.log(summary)
         return(
             <div>
               <div className="half-width-parameter">
@@ -125,7 +127,7 @@ export default class toCard extends React.Component {
               </div>               
               <div className="single-parameter">
                 <div className="parameter-label">Summary/Narrative</div>
-                  <p>{summary}<a onClick={()=>this.selectTab(2)}>continue reading</a></p>
+                  <p>{summary}<a onClick={()=>this.selectTab(2)} style={{cursor:"pointer"}} >continue reading</a></p>
               </div>
             </div>
         )
