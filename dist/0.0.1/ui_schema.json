@@ -4,7 +4,7 @@
       "ui:widget": "textarea"
     },
     "nature_of_land_conflict": {
-        "ui:widget": "textarea"
+        "ui:widget": "dropdown"
     },
     "no_of_household_affected": {
       "ui:widget": "range"

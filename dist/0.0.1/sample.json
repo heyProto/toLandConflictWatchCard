@@ -1,7 +1,7 @@
 {
   "data": {
     "name_of_conflict": "Assigned lands encroached by upper caste landlords in Bhattuvanipalle village of Prakasham District",
-    "nature_of_land_conflict": "Encroachment by non-right holders, Land Acquisition by Government",
+    "nature_of_land_conflict": ["Encroachment by non-right holders", "Land Acquisition by Government"],
     "village": "Bhattuvanipalle",
     "district": "Prakasham",
     "state": "Andhra Pradesh",

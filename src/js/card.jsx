@@ -75,6 +75,10 @@ export default class toCard extends React.Component {
       });
       return tabNames;
   }
+
+  getNature(natures){
+    return natures.join(', ')
+  }
   
   renderTabContent(tab){
     let data = this.state.dataJSON.data;
@@ -88,7 +92,7 @@ export default class toCard extends React.Component {
               <div className="half-width-parameter">
                 <div className="single-parameter">
                   <div className="parameter-label">REASONS/NATURE OF LAND CONFLICT</div>
-                  <p>{data.nature_of_land_conflict}</p>
+                  <p>{this.getNature(data.nature_of_land_conflict)}</p>
                 </div>
                 <div className="single-parameter">
                   <div className="parameter-label">SECTOR/TYPE OF INDUSTRY</div>

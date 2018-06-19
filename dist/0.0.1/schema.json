@@ -14,7 +14,27 @@
         },
         "nature_of_land_conflict": {
           "id": "/properties/data/properties/nature_of_land_conflict",
-          "type": "string",
+          "type": "array",
+          "items": {
+            "type":"string",
+            "enum":[
+              "Conservation/forestry", 
+              "Encroachment by non-right holders",
+              "Ethnic/communal conflicts",
+              "Industry",
+              "Infrastructure",
+              "Land acquisition by government ",
+              "Land ceiling laws",
+              "Mining",
+              "Natural calamities",
+              "non-settlement or violation of Forest Rights Act",
+              "Rehabilitation of displaced people",
+              "Urban development",
+              "Forced eviction",
+              "Inter-community conflict over resources "
+            ]
+          },
+          
           "title": "Reasons/Nature of Land Conflict"
         },
         "village": {
